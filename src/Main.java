@@ -2,6 +2,8 @@ import java.io.IOException;
 
 import tests.Add;
 import tests.Divide;
+import tests.Subtract;
+import tests.Subtract;
 
 public class Main {
 
@@ -12,12 +14,15 @@ public class Main {
 	    Divide d = new Divide();
 	    d.test();
 
-//        Add add = new Add();
-//        try {
-//            add.test();
-//        }catch(IOException e) {
-//            e.printStackTrace();
-//        }
-
+        Add add = new Add();
+        try {
+            add.test();
+        }catch(IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+        Subtract subtract = new Subtract();
+        subtract.test();
     }
 }

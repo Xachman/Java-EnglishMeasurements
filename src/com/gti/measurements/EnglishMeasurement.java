@@ -69,18 +69,22 @@ public class EnglishMeasurement {
 
 
     }
+    public EnglishMeasurement(Fraction fraction) {
+        inchFraction = fraction;
+    }
     private void setToNoValue() {
         inchFraction = new Fraction(0, 1);
     }
     public EnglishMeasurement add(EnglishMeasurement measurement) {
         Fraction fraction = this.inchFraction().add(measurement.inchFraction());
-        int totalInches = this.inch() + measurement.inch();
-
-        if (fraction.denominator() == 1 && fraction.numerator() == 1) {
-            totalInches++;
-            fraction = new Fraction(0, 1);
-        }
-        return new EnglishMeasurement(totalInches, fraction);
+        
+        return new EnglishMeasurement(fraction);
+    }
+    
+    public EnglishMeasurement subtract(EnglishMeasurement measurement) {
+        Fraction fraction = this.inchFraction().subtract(measurement.inchFraction());
+        
+        return new EnglishMeasurement(fraction);
     }
 
     public EnglishMeasurement area(EnglishMeasurement measurement) {

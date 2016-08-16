@@ -25,5 +25,12 @@ public class Add {
     public void test()  throws IOException{
         EnglishMeasurement em = getPullback(new EnglishMeasurement("12\""), new EnglishMeasurement("1/4"), 2);
         System.out.println(em);
+        
+        EnglishMeasurement em2 = new EnglishMeasurement("12\" 1/2");
+        System.out.println("em2 value: "+em2);
+        EnglishMeasurement em3 = new EnglishMeasurement("12' 1/4");
+        System.out.println("em3 Value: "+em3);        
+        System.out.println(em2.add(em3));
+        
     }
 }

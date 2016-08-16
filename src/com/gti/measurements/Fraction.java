@@ -60,6 +60,13 @@ public class Fraction {
 
         return simplify(numerator, denominator);
     }
+    public Fraction subtract(Fraction fraction) {
+        int commonDenominator  = this.denominator * fraction.denominator;
+        int numeratorOne = this.numerator * fraction.denominator;
+        int numeratorTwo = fraction.numerator * this.denominator;
+        int addedNumerator = numeratorOne - numeratorTwo;
+        return simplify(addedNumerator, commonDenominator);
+    }
     private Fraction simplify(int numerator, int denominator) {
         int greatestCommonDivisor = GCD(numerator, denominator);
         return new Fraction(numerator / greatestCommonDivisor, denominator / greatestCommonDivisor);
